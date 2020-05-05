@@ -40,6 +40,7 @@ To add a new ingredient to the application users must fill out all the text fiel
 To save the newly entered ingredient in the application the user clicks ‘Save Ingredient’. Warning messages will be displayed if there is an error with the entered information.
 
 ![IngredientsAddError](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/ingredientsAddError.jpg?raw=true)
+
 *Figure 3 Dialog box to indicate an error in adding a new Ingredient*
 
 #### Browse
