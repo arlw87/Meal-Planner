@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F0F0F0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.Controller">
+   <children>
+      <Pane fx:id="MenuPane" prefHeight="800.0" prefWidth="156.0" style="-fx-background-color: #40A0F0;">
+         <children>
+            <VBox layoutY="-1.0" prefHeight="800.0" prefWidth="156.0">
+               <children>
+                  <AnchorPane prefHeight="225.0" prefWidth="156.0" />
+                  <Button id="BtnMeals" fx:id="ingredBtn" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ingredBtnClicked" prefHeight="58.0" prefWidth="156.0" style="-fx-background-color: #40A0F0;" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_apple_96.png" />
+                           </image>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button id="BtnMeals" fx:id="mealsBtn" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#mealsBtnClicked" prefHeight="58.0" prefWidth="156.0" style="-fx-background-color: #40A0F0;">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_cutlery_96px_1.png" />
+                           </image>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="BtnMeals" fx:id="plannerBtn" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#plannerBtnClicked" prefHeight="58.0" prefWidth="156.0" style="-fx-background-color: #40A0F0;">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_planner_96px_1.png" />
+                           </image>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="IngredientsSubMenu" layoutX="156.0" prefHeight="800.0" prefWidth="156.0" style="-fx-background-color: #C2C2C2;">
+         <children>
+            <VBox layoutY="336.0" prefHeight="116.0" prefWidth="156.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#IngredBrowseBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Browse">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#IngredAddBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Add">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="MealSubMenuPane" layoutX="156.0" prefHeight="800.0" prefWidth="156.0" style="-fx-background-color: #C2C2C2;">
+         <children>
+            <VBox layoutY="336.0" prefHeight="116.0" prefWidth="156.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#MealBrowseBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Browse">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#MealAddBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Add">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="PlannerSubMenuPane" layoutX="156.0" prefHeight="800.0" prefWidth="156.0" style="-fx-background-color: #C2C2C2;">
+         <children>
+            <VBox layoutY="284.0" prefHeight="116.0" prefWidth="156.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#plannerPlanBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Calendar">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#plannerShoppingListBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Shopping List">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#plannerCupboardBtnClicked" onMouseEntered="#subMenuButtonDarkenColor" onMouseExited="#subMenuButtonResetColor" prefHeight="52.0" prefWidth="154.0" style="-fx-background-color: #C2C2C2;" text="Cupboard">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <BorderPane fx:id="IngredientsAddPane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="670.0" prefWidth="888.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane fx:id="IngredientsAddSubPane" prefHeight="622.0" prefWidth="877.0">
+                     <children>
+                        <TextField fx:id="ingredNameInput" layoutX="44.0" layoutY="76.0" prefHeight="47.0" prefWidth="347.0" promptText="New Ingredient" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredCalorieInput" layoutX="44.0" layoutY="161.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredSugarInput" layoutX="439.0" layoutY="161.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="ingredProteinInput" layoutX="44.0" layoutY="245.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredFiberInput" layoutX="439.0" layoutY="245.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredCarbsInput" layoutX="44.0" layoutY="342.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredFatInput" layoutX="439.0" layoutY="342.0" prefHeight="47.0" prefWidth="347.0" promptText="per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredQuantityNameInput" layoutX="44.0" layoutY="434.0" prefHeight="50.0" prefWidth="347.0" promptText="Quantity Name" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Text fill="#837d7d" layoutX="44.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories (KCal) " wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="44.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Protein (g)" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="44.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carbs (g)" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="439.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sugar (g)" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="439.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fibre (g)" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="439.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fat (g)" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="44.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fixed Quantity Name" wrappingWidth="195.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#837d7d" layoutX="44.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient Name" wrappingWidth="154.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="ingredQuantityAmountInput" layoutX="439.0" layoutY="434.0" prefHeight="50.0" prefWidth="347.0" promptText="in grams" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <Text fill="#837d7d" layoutX="439.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity Amount " wrappingWidth="195.0">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="btnSaveIngredients" alignment="CENTER" layoutX="380.0" layoutY="565.0" mnemonicParsing="false" onAction="#saveIngred" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: #40A0F0; -fx-background-radius: 5;" text="Save Ingredient" textFill="WHITE" />
+                        <Separator layoutX="51.0" layoutY="524.0" prefHeight="0.0" prefWidth="734.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Ingredients" textFill="#40a0f0">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramIngredAdd" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramIngredAdd" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="MealsBrowsePane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="651.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane fx:id="mealBrowseSubPane" prefHeight="704.0" prefWidth="877.0">
+                     <children>
+                        <ComboBox fx:id="comboMealSelection" layoutX="154.0" layoutY="40.0" onAction="#selectRecipeFromCombo" prefHeight="47.0" prefWidth="347.0" style="-fx-border-color: #948c8c; -fx-background-color: #ffffff; -fx-border-width: 1;" />
+                        <ListView fx:id="mealIngred" layoutX="154.0" layoutY="117.0" prefHeight="183.0" prefWidth="494.0" style="-fx-border-width: 1; -fx-border-color: #948c8c;" />
+                        <Label layoutX="38.0" layoutY="45.0" prefHeight="38.0" prefWidth="92.0" text="Select Meal" textFill="#8d8585">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="117.0" prefHeight="38.0" prefWidth="102.0" text="Ingredients" textFill="#8d8585">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="mealMethod" layoutX="153.0" layoutY="324.0" prefHeight="200.0" prefWidth="495.0" style="-fx-border-color: #948c8c; -fx-background-color: #ffffff; -fx-border-width: 1;" />
+                        <Label layoutX="38.0" layoutY="324.0" prefHeight="38.0" prefWidth="102.0" text="Method" textFill="#8d8585">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="33.0" layoutY="541.0" prefHeight="38.0" prefWidth="102.0" text="Nutrition" textFill="#8d8585">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="browseMealNutritionOne" layoutX="154.0" layoutY="552.0" prefHeight="17.0" prefWidth="490.0" text="Label" />
+                        <Label fx:id="browseMealNutritionTwo" layoutX="154.0" layoutY="579.0" prefHeight="17.0" prefWidth="492.0" text="Label" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Meals" textFill="#fa745a">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramMealsBrowsePane" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramMealsBrowsePane" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="MealsAddPane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="651.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane fx:id="mealAddSubPane" prefHeight="653.0" prefWidth="877.0">
+                     <children>
+                        <TextField fx:id="mealNameField" layoutX="29.0" layoutY="30.0" prefHeight="47.0" prefWidth="347.0" promptText="Meal Name" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <ListView fx:id="ingredientsList" layoutX="29.0" layoutY="187.0" prefHeight="264.0" prefWidth="265.0" style="-fx-border-color: #948c8c; -fx-border-width: 1; -fx-background-color: #ffffff;" />
+                        <ListView fx:id="ingredientsForMeal" layoutX="522.0" layoutY="131.0" prefHeight="320.0" prefWidth="294.0" style="-fx-border-color: #948c8c; -fx-border-width: 1; -fx-background-color: #ffffff;" />
+                        <TextField fx:id="searchIngredient" layoutX="30.0" layoutY="131.0" onKeyTyped="#filterIngredients" prefHeight="47.0" prefWidth="264.0" promptText="Search Ingredients" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-style: solid;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <Label fx:id="labelMealIngredients" layoutX="522.0" layoutY="102.0" prefHeight="17.0" prefWidth="132.0" text="Meal Ingredients" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="methodField" layoutX="29.0" layoutY="460.0" prefHeight="170.0" prefWidth="788.0" promptText="Method" style="-fx-border-width: 1; -fx-border-color: #948c8c; -fx-background-color: #ffffff;">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
+                        <Button fx:id="btnAddIngredToMeal" layoutX="322.0" layoutY="336.0" mnemonicParsing="false" onAction="#addIngredientToMeal" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #FA745A;" text="Add" textFill="WHITE" />
+                        <Button fx:id="btnRemoveIngredFromMeal" layoutX="417.0" layoutY="336.0" mnemonicParsing="false" onAction="#removeIngredFromMeal" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #FA745A;" text="Remove" textFill="WHITE" />
+                        <Label fx:id="labelQuantityTitle" layoutX="360.0" layoutY="141.0" prefHeight="17.0" prefWidth="85.0" text="Quantity" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ingredientQuantityInput" layoutX="320.0" layoutY="187.0" prefHeight="0.0" prefWidth="56.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                        <Label fx:id="labelInGrams" layoutX="381.0" layoutY="187.0" prefHeight="17.0" prefWidth="85.0" text="in grams" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelSetAmount" layoutX="355.0" layoutY="237.0" prefHeight="27.0" prefWidth="96.0" text="Set amount" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mealsInputQuantityNumber" layoutX="310.0" layoutY="282.0" prefHeight="27.0" prefWidth="44.0" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;" />
+                        <Label fx:id="labelQuantityNumber" layoutX="311.0" layoutY="258.0" prefHeight="27.0" prefWidth="35.0" text="No." textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="quantityNameLabel" layoutX="368.0" layoutY="282.0" prefHeight="27.0" prefWidth="140.0" text="Quantity Name" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <Button fx:id="btnSaveMeal" alignment="CENTER" mnemonicParsing="false" onAction="#saveMeal" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: #FA745A; -fx-background-radius: 5;" text="Save Meal" textFill="WHITE" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" />
+               </BorderPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </bottom>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Meals" textFill="#fa745a">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramMealsAddPane" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramMealsAddPane" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="IngredientsBrowsePane" layoutX="324.0" prefHeight="800.0" prefWidth="848.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="610.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane fx:id="IngredientsBrowseSubPane" prefHeight="710.0" prefWidth="854.0">
+                     <children>
+                        <TextField fx:id="ingredCalorieInputBrowse" layoutX="44.0" layoutY="172.0" prefHeight="47.0" prefWidth="347.0" promptText="Caloreis Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredSugarInputBrowse" layoutX="455.0" layoutY="172.0" prefHeight="47.0" prefWidth="347.0" promptText="Sugar Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredProteinInputBrowse" layoutX="44.0" layoutY="266.0" prefHeight="47.0" prefWidth="347.0" promptText="Protein Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredFiberInputBrowse" layoutX="455.0" layoutY="266.0" prefHeight="47.0" prefWidth="347.0" promptText="Fiber Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredCarbsInputBrowse" layoutX="44.0" layoutY="356.0" prefHeight="47.0" prefWidth="347.0" promptText="Carbs Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredFatInputBrowse" layoutX="455.0" layoutY="356.0" prefHeight="47.0" prefWidth="347.0" promptText="Fat Per 100g" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <ComboBox fx:id="ingredientsBrowseCombo" layoutX="44.0" layoutY="76.0" onAction="#ingredientsBrowseSelect" prefHeight="44.0" prefWidth="348.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                        <Label layoutX="44.0" layoutY="145.0" prefHeight="26.0" prefWidth="217.0" text="Calories (KCal) per 100 g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="240.0" prefHeight="26.0" prefWidth="187.0" text="Protein (g) per 100 g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="330.0" prefHeight="26.0" prefWidth="167.0" text="Carbs (g) per 100g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="455.0" layoutY="146.0" prefHeight="26.0" prefWidth="156.0" text="Sugar (g) per 100g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="455.0" layoutY="240.0" prefHeight="26.0" prefWidth="141.0" text="Fibre (g) per 100g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="455.0" layoutY="330.0" prefHeight="26.0" prefWidth="166.0" text="Fat (g) per 100g">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <ToggleButton fx:id="ingredBrowseEditToggle" layoutX="377.0" layoutY="547.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="101.0" text="Edit" />
+                        <Button fx:id="updateIngredsBtn" alignment="CENTER" layoutX="350.0" layoutY="602.0" mnemonicParsing="false" onAction="#UpdateIngred" prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #40A0F0; -fx-background-radius: 5;" text="Update Ingredient" textFill="WHITE" />
+                        <Label layoutX="43.0" layoutY="50.0" prefHeight="26.0" prefWidth="141.0" text="Ingredient">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="27.0" layoutY="513.0" prefHeight="0.0" prefWidth="786.0" />
+                        <TextField fx:id="ingredQuantityNameInputBrowse" layoutX="41.0" layoutY="452.0" prefHeight="47.0" prefWidth="347.0" promptText="Quantity Name" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="ingredQuantityAmountInputBrowse" layoutX="452.0" layoutY="452.0" prefHeight="47.0" prefWidth="347.0" promptText="in grams" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <Label layoutX="41.0" layoutY="426.0" prefHeight="26.0" prefWidth="167.0" text="Fixed Quantity Name">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="452.0" layoutY="426.0" prefHeight="26.0" prefWidth="166.0" text="Quantity Amount (g)">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Ingredients" textFill="#40a0f0">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramIngredBrowse" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramIngredBrowse" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="PlannerCupboardPane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="651.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane fx:id="plannerCupboardSubPane" prefHeight="703.0" prefWidth="877.0">
+                     <children>
+                        <ListView fx:id="IngredientsInCupboard" layoutX="525.0" layoutY="52.0" prefHeight="574.0" prefWidth="325.0" style="-fx-border-color: #948c8c; -fx-border-width: 1; -fx-background-color: #ffffff;" />
+                        <TextField fx:id="searchIngredientCupboard" layoutX="34.0" layoutY="31.0" onKeyTyped="#filterCupboardIngredients" prefHeight="47.0" prefWidth="301.0" promptText="Search Ingredients" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-style: solid;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </TextField>
+                        <Button fx:id="btnAddIngredToCupboard" layoutX="378.0" layoutY="299.0" mnemonicParsing="false" onAction="#addIngredientToCupboard" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #FA745A;" text="Add" textFill="WHITE" />
+                        <Button fx:id="btnRemoveIngredFromCupboard" layoutX="379.0" layoutY="347.0" mnemonicParsing="false" onAction="#removeIngredFromCupboard" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #FA745A;" text="Remove" textFill="WHITE" />
+                        <Label layoutX="369.0" layoutY="178.0" prefHeight="17.0" prefWidth="85.0" text="Quantity" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ingredientQuantityInputCupboard" layoutX="346.0" layoutY="132.0" prefHeight="0.0" prefWidth="56.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                        <Label layoutX="412.0" layoutY="132.0" prefHeight="17.0" prefWidth="85.0" text="in grams" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="363.0" layoutY="91.0" prefHeight="27.0" prefWidth="96.0" text="Set amount" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cupboardQuantityNumber" layoutX="347.0" layoutY="232.0" prefHeight="27.0" prefWidth="44.0" style="-fx-border-width: 1; -fx-background-color: #ffffff; -fx-border-color: #948c8c;" />
+                        <Label fx:id="labelNumberPlanner" layoutX="346.0" layoutY="205.0" prefHeight="27.0" prefWidth="35.0" text="No." textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="quantityNameLabelCupboard" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="401.0" layoutY="232.0" prefHeight="60.0" prefWidth="119.0" text="Quantity Name" textFill="#837d7d">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="allIngredientsCupboardPane" layoutX="33.0" layoutY="91.0" prefHeight="576.0" prefWidth="302.0" style="-fx-border-color: #948c8c; -fx-border-width: 1; -fx-background-color: #ffffff;" />
+                        <Button fx:id="btnClearCupboard" layoutX="652.0" layoutY="642.0" mnemonicParsing="false" onAction="#clearCupboardIngredients" text="Clear Cupboard" />
+                        <Label fx:id="labelCupboardStores" layoutX="525.0" layoutY="28.0" prefHeight="17.0" prefWidth="212.0" text="Ingredients in Cupboard" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Planner" textFill="#64b6ac">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramPlannerCupboardPane" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramPlannerCupboardPane" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="PlannerShoppingListPane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="651.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane prefHeight="699.0" prefWidth="877.0">
+                     <children>
+                        <ListView fx:id="shoppingList" layoutX="36.0" layoutY="56.0" prefHeight="619.0" prefWidth="381.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                        <Label fx:id="labelShoppingList" layoutX="36.0" layoutY="30.0" prefHeight="17.0" prefWidth="109.0" text="Shopping List" />
+                        <Button fx:id="btnClearShoppingList" layoutX="578.0" layoutY="130.0" mnemonicParsing="false" onAction="#btnClearShoppingListClicked" text="Clear List" />
+                        <Separator layoutX="435.0" layoutY="184.0" prefHeight="3.0" prefWidth="426.0" />
+                        <Button fx:id="btnExportShopping" layoutX="585.0" layoutY="205.0" mnemonicParsing="false" onAction="#exportShoppingList" text="Export">
+                           <tooltip>
+                              <Tooltip text="Export Shopping list to a text file" />
+                           </tooltip></Button>
+                        <Label fx:id="labelWarningShoppingList" alignment="TOP_LEFT" layoutX="451.0" layoutY="381.0" prefHeight="88.0" prefWidth="391.0" text="Warning: Shopping list may not reflect the meal planner. Select generate shopping list in the calendar tab to ensure they do match. " wrapText="true" />
+                        <Label fx:id="labelGeneratedDateTime" alignment="TOP_RIGHT" layoutX="254.0" layoutY="30.0" prefHeight="17.0" prefWidth="163.0" text="Label" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Planner" textFill="#64b6ac">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button fx:id="btnExitProgramPlannerShoppingListPane" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramPlannerShoppingListPane" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="PlannerPlanPane" layoutX="324.0" prefHeight="800.0" prefWidth="877.0" style="-fx-background-color: #F0F0F0;">
+         <center>
+            <VBox prefHeight="651.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Line endX="766.2929077148438" endY="-4.1421356201171875" startX="1586.5858154296875" startY="-4.142134666442871" stroke="#948c8c" strokeWidth="2.0">
+                     <VBox.margin>
+                        <Insets left="30.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Pane prefHeight="697.0" prefWidth="877.0">
+                     <children>
+                        <ListView fx:id="weekList" layoutX="30.0" layoutY="17.0" prefHeight="668.0" prefWidth="403.0" />
+                        <VBox layoutX="459.0" layoutY="17.0" prefHeight="666.0" prefWidth="393.0">
+                           <children>
+                              <Text fx:id="textDay" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" textAlignment="CENTER" wrappingWidth="390.13671875" />
+                              <AnchorPane prefHeight="8.0" prefWidth="393.0" />
+                              <Text fx:id="textBreakfastTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Breakfast">
+                                 <font>
+                                    <Font name="Cambria" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Line fx:id="lineBreakfast" endX="373.4730529785156" endY="-2.399966239929199" startX="-9.819839477539062" startY="-2.3996026515960693" strokeWidth="3.0" />
+                              <Pane prefHeight="115.0" prefWidth="393.0">
+                                 <children>
+                                    <ComboBox fx:id="breakfastCombo" layoutX="1.0" layoutY="14.0" onAction="#breakfastComboSelectionMade" prefHeight="34.0" prefWidth="301.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                                    <Button fx:id="btnPlanSaveBreakfast" layoutX="307.0" layoutY="15.0" mnemonicParsing="false" onAction="#updateBreakfast" prefHeight="32.0" prefWidth="66.0" text="Update" />
+                                    <Label fx:id="breakfastNutritionOne" layoutX="26.0" layoutY="50.0" prefHeight="29.0" prefWidth="300.0" text="Label" />
+                                    <Label fx:id="breakfastNutritionTwo" layoutX="26.0" layoutY="70.0" prefHeight="29.0" prefWidth="302.0" text="Label" />
+                                    <Button fx:id="btnClearBreakfast" layoutX="375.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearBreakfastPlanner" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #F0F0F0;">
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/icons8_trash_can_96px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <Text fx:id="textLunchTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Lunch">
+                                 <font>
+                                    <Font name="Cambria" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Line fx:id="lineLunch" endX="373.4730529785156" endY="-2.399966239929199" startX="-9.819839477539062" startY="-2.3996026515960693" strokeWidth="3.0" />
+                              <Pane prefHeight="115.0" prefWidth="393.0">
+                                 <children>
+                                    <Button fx:id="btnPlanSaveLunch" layoutX="307.0" layoutY="15.0" mnemonicParsing="false" onAction="#updateLunch" prefHeight="32.0" prefWidth="66.0" text="Update" />
+                                    <ComboBox fx:id="lunchCombo" layoutY="14.0" onAction="#lunchComboSelectionMade" prefHeight="34.0" prefWidth="301.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-border-width: 1;" />
+                                    <Label fx:id="lunchNutritionOne" layoutX="26.0" layoutY="50.0" prefHeight="29.0" prefWidth="300.0" text="Label" />
+                                    <Label fx:id="lunchNutritionTwo" layoutX="26.0" layoutY="70.0" prefHeight="29.0" prefWidth="302.0" text="Label" />
+                                    <Button fx:id="btnClearLunch" layoutX="375.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearLunchPlanner" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #F0F0F0;">
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/icons8_trash_can_96px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children></Pane>
+                              <Text fx:id="textDinnerTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Dinner">
+                                 <font>
+                                    <Font name="Cambria" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Line fx:id="lineDinner" endX="373.4730529785156" endY="-2.399966239929199" startX="-9.819839477539062" startY="-2.3996026515960693" strokeWidth="3.0" />
+                              <Pane prefHeight="115.0" prefWidth="393.0">
+                                 <children>
+                                    <ComboBox fx:id="dinnerCombo" layoutY="14.0" onAction="#dinnerComboSelectionMade" prefHeight="34.0" prefWidth="301.0" style="-fx-background-color: #ffffff; -fx-border-color: #948c8c; -fx-bordr-width: 1;" />
+                                    <Button fx:id="btnPlanSaveDinner" layoutX="307.0" layoutY="15.0" mnemonicParsing="false" onAction="#updateDinner" prefHeight="32.0" prefWidth="66.0" text="Update" />
+                                    <Label fx:id="dinnerNutritionOne" layoutX="26.0" layoutY="50.0" prefHeight="29.0" prefWidth="300.0" text="Label" />
+                                    <Label fx:id="dinnerNutritionTwo" layoutX="26.0" layoutY="70.0" prefHeight="29.0" prefWidth="302.0" text="Label" />
+                                    <Button fx:id="btnClearDinner" layoutX="375.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearDinnerPlanner" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #F0F0F0;">
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/icons8_trash_can_96px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children></Pane>
+                              <Text fx:id="textTotalNutrition" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Nutrition Information">
+                                 <font>
+                                    <Font name="Cambria" size="15.0" />
+                                 </font>
+                              </Text>
+                              <Line fx:id="lineTotal" endX="373.4730529785156" endY="-2.399966239929199" startX="-9.819839477539062" startY="-2.3996026515960693" strokeWidth="3.0" />
+                              <Pane prefHeight="81.0" prefWidth="393.0">
+                                 <children>
+                                    <Label fx:id="totalNutritionOne" layoutX="24.0" layoutY="7.0" prefHeight="29.0" prefWidth="300.0" text="Label" />
+                                    <Label fx:id="totalNutritionTwo" layoutX="24.0" layoutY="27.0" prefHeight="29.0" prefWidth="302.0" text="Label" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="120.0" prefWidth="393.0">
+                                 <children>
+                                    <CheckBox fx:id="cupboardCheckBox" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#updateExcludeCupboardStores" style="-fx-text-fill: #64b6ac;" text="Exclude Cupboard Stores" />
+                                    <Button fx:id="btnGenerateShoppingList" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" onAction="#generateShoppingList" text="Generate Shopping List" />
+                                    <Button fx:id="btnClearPlanner" layoutX="270.0" layoutY="88.0" mnemonicParsing="false" onAction="#clearPlanner" text="Clear Planner" />
+                                    <Separator layoutX="7.0" layoutY="37.0" prefHeight="5.0" prefWidth="388.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <Pane prefHeight="93.0" prefWidth="877.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="67.0" prefWidth="668.0" text="Planner" textFill="#64b6ac">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Button id="exitButton" fx:id="btnExitProgramPlannerPlanPane" layoutX="832.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnExitClicked" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_delete_96px_3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinimiseProgramPlannerPlanPlane" layoutX="787.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimiseWindow" prefHeight="38.0" prefWidth="22.0" style="-fx-background-color: #F0F0F0;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icons8_minus_96px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
