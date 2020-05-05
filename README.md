@@ -1,6 +1,6 @@
 # Meal Planner
 
-![alt text](https://github.com/arlw87/Meal-Planner/blob/master/calendar.jpg?raw=true)
+![alt text](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/calendar.jpg?raw=true)
 
 ## Introduction
 
