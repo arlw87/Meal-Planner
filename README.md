@@ -55,6 +55,7 @@ If the user wants to edit the ingredient’s information, they can click on the 
 Warning messages will be displayed if there is an error with the updated information.
 
 ![IngredientsBrowseError](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/ingredientsBrowseError.jpg?raw=true)
+
 *Figure 5 Dialog box indicating an error editing the ingredient details*
 
 ### Meals
@@ -92,6 +93,7 @@ Once all the fields have been completed click ‘Save Meal’ and the meal will 
 If there is an error when entering or saving meal information an error message dialog box will display.
 
 ![mealsAddError](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/mealsAddError.jpg?raw=true)
+
 *Figure 10 Error message shown if meal is tried to be saved with fields incomplete*
 
 #### Browse
@@ -128,6 +130,7 @@ Once the user has completed their meal plan for the week they can then click on 
 If the user wants to clear the whole calendar they can click ‘Clear Calendar’ and confirm that they want to clear the whole calendar via a dialog box.
 
 ![calendarClearConfirm](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/calendarClearConfirm.jpg?raw=true)
+
 *Figure 14 Confirmation dialog box if the user request to clear calendar*
 
 #### Shopping List
@@ -152,6 +155,7 @@ They are presented with a ‘Save Shopping List’ window where they can select 
 The user can also clear the shopping list by clicking the ‘Clear List’ button. They will be asked for confirmation below the list is cleared.
 
 ![shoppingListClear](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/shoppingListClear.jpg?raw=true)
+
 *Figure 18 Confirmation dialog to clear shopping list*
 
 #### Cupboard
@@ -178,6 +182,7 @@ The user can also clear the entire list of Ingredients in Cupboard by clicking t
 If an error is made when adding or removing an ingredient from the Ingredients in Cupboard list then they are notified via a dialog box. 
 
 ![CupboardError](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/cupboardError.jpg?raw=true)
+
 *Figure 21 Error dialog if no quantity specified when adding ingredient to cupboard*
 
 ## Other Information
