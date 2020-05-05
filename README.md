@@ -21,3 +21,12 @@ The meal planner application main menu located on the left of the app has three 
 2.	Meals (cutlery icon) 
 3.	Planner (calendar icon). 
 
+### Ingredients
+
+In the ingredients section of the application user can add, browser and edit ingredients. When the ingredients icon in the main menu is click, the sub menu (grey bar) will show options for the user to Add or to Browse Ingredients.
+
+#### Add
+
+![IngredientsAdd](https://github.com/arlw87/Meal-Planner/blob/master/ReadMe-Images/ingredientsAdd.jpg?raw=true)
+
+
